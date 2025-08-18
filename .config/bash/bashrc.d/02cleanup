@@ -1,0 +1,28 @@
+#!/bin/sh
+# Cleans up $HOME .
+
+# - Cuda
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+
+# - Go
+export GOPATH="$XDG_DATA_HOME"/go
+
+# - Less
+export LESSHISTFILE="-"
+
+# - Maven
+mvn() { mvn -gs $XDG_CONFIG_HOME/maven/settings.xml "${@}"; }
+
+# - NPM
+export NPM_CONFIG_INIT_MODULE="$XDG_CONFIG_HOME"/npm/config/npm-init.js
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"/npm
+export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR"/npm
+
+# - W3M
+export W3M_DIR="$XDG_CONFIG_HOME"/w3m
+
+# - Wget
+wget() { command wget --hsts-file=$XDG_CACHE_HOME/wget-hsts "${@}"; }
+
+# - Wine
+export WINEPREFIX="$XDG_DATA_HOME"/wine
