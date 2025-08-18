@@ -9,3 +9,6 @@ if not vim.loop.fs_stat(mini_path) then
 end
 -- Set up 'mini.deps'
 require('mini.deps').setup({ path = { package = path_package } })
+
+-- Define main config table to be able to use it in scripts
+_G.Config = {}
